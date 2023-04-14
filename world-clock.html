@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="script.css">
+  <title>World Clock</title>
+
+
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>
+        <img src="clock.gif">
+      </td>
+      <td>
+        <main>
+          <div class="current-location">
+            <i class="ri-map-pin-2-fill"></i>
+
+
+            <h3 class="location-label">New Delhi, india</h3>
+          </div>
+
+          <div class="current-date-time">
+            <h3 class="time" data-time="current-time">00:00:00 <span class="meridies">am</span></h3>
+            <h4 class="date" data-time="current-date">Wed, 12/02/2022</h4>
+          </div>
+
+
+
+
+          <div class="controller" tabindex="2">
+            <i class="ri-add-circle-line add-ico" data-btn="show-add-new" onclick="showAdd()" tabindex="3"></i><span data-btn="show-add-new" class="add-ico" onclick="showAdd()" tabindex="4"><strong>Add New Country</strong> </span>
+            <div class="add-country" data-show="search-menu">
+              <div class="add-country-inner">
+                <span class="close" onclick="closeSearch()">
+                  <i class="ri-close-line close-ico"></i>
+                </span>
+                <div>
+                  <h2 class="model-title">Search cities</h2>
+                </div>
+                <div class="search-box">
+                  <input type="text" placeholder="Search" class="search-input" onkeyup="searchCity(this.value)">
+                  <i class="ri-search-2-line search-ico"></i>
+                </div>
+                <div class="cities-list" data-city="list">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Diff-Country" data-item="add-other-timeZone">
+
+          </div>
+
+        </main>
+        <script>
+          let val = new Date();
+          console.log(val.toLocaleString('en-US', {
+            timeZone: 'America/New_York'
+          }));
+        </script>
+
+        <script src="script.json"></script>
+        <script src="script.js"></script>
+
+
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
